@@ -9,16 +9,20 @@ def intersection(set1, set2):
 
 
 def union(set1, set2):
-    set = set1 + set2
-    for i in set:
+    comb = set1 + set2
+    for i in comb:
         if (i in set1) and (i in set2):
-            set.remove(i)
+            comb.remove(i)
+    set = comb
     return set
 
 
 def symmetric_difference(set1, set2):
-	# set1 and set2 are lists
-	# return the symmetric difference
-    pass
-
-print(intersection([1,2,3],[3,4,5]))
+    comb = set1 + set2
+    set = []
+    for i in comb:
+        if (i in set1) and (i not in set2):
+            set.append(i)
+        if (i in set2) and (i not in set1):
+            set.append(i)
+    return set
