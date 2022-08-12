@@ -19,10 +19,7 @@ def union(set1, set2):
 
 def symmetric_difference(set1, set2):
     comb = set1 + set2
-    set = []
-    for i in comb:
-        if (i in set1) and (i not in set2):
-            set.append(i)
-        if (i in set2) and (i not in set1):
-            set.append(i)
-    return set
+    xor = [i for i in comb if not ((i in set1) and (i in set2))]
+    return xor
+
+print(symmetric_difference([1,2,3],[3,4,5]))
